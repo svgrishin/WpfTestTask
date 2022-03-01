@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTestTask"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="514" Width="637">
+    <Grid x:Name="MaitGrid">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MaxHeight="200" MinHeight="100"/>
+            <RowDefinition Height="Auto" MinHeight="320
+                           "/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" x:Name="Keyboard">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" MaxHeight="70" MinHeight="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" x:Name="Buttons">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" MinHeight="80"/>
+                    <RowDefinition Height="Auto" MinHeight="80"/>
+                    <RowDefinition Height="Auto" MinHeight="80"/>
+                    <RowDefinition Height="Auto" MinHeight="80"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" MinWidth="100"/>
+                    <ColumnDefinition Width="*" MinWidth="100"/>
+                    <ColumnDefinition Width="*" MinWidth="100"/>
+                    <ColumnDefinition Width="*" MinWidth="100"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </Grid>
 
     </Grid>
+
 </Window>
