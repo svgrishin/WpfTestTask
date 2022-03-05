@@ -31,7 +31,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="btn_Percent" Content="%" Margin="0,0,0,0" Grid.Column="0" Grid.Row="0" BorderThickness="0.5,0.5,0.5,0.5"/>
+                <Button x:Name="btn_History" Content="History" Margin="0,0,0,0" Grid.Column="0" Grid.Row="0" BorderThickness="0.5,0.5,0.5,0.5" Click="btn_History_Click"/>
                 <Button x:Name="btn_CE" Content="CE" Margin="0,0,0,0" Grid.Column="1" Grid.Row="0" BorderThickness="0.5,0.5,0.5,0.5"/>
                 <Button x:Name="btn_C" Content="C" Margin="0,0,0,0" Grid.Column="2" Grid.Row="0" BorderThickness="0.5,0.5,0.5,0.5"/>
                 <Button x:Name="btn_Backspase" Content="Del" Margin="0,0,0,0" Grid.Column="3" Grid.Row="0" BorderThickness="0.5,0.5,0.5,0.5"/>
@@ -70,7 +70,7 @@
                 <Button x:Name="btn_MPlus" Content="M+" Margin="0,0,0,0" Grid.Column="2" BorderThickness="0.5,0.5,0.5,0.5"/>
                 <Button x:Name="btn_MMinus" Content="M-" Margin="0,0,0,0" Grid.Column="3" BorderThickness="0.5,0.5,0.5,0.5"/>
                 <Button x:Name="btn_MS" Content="MS" Margin="0,0,0,0" Grid.Column="4" BorderThickness="0.5,0.5,0.5,0.5"/>
-                <Button x:Name="btn_M" Content="M" Margin="0,0,0,0" Grid.Column="5" BorderThickness="0.5,0.5,0.5,0.5"/>
+                <Button x:Name="btn_M" Content="M" Margin="0,0,0,0" Grid.Column="5" BorderThickness="0.5,0.5,0.5,0.5" Click="btn_M_Click"/>
 
             </Grid>
         </Grid>

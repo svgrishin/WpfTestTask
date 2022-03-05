@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 namespace WpfTestTask
 {
     /// <summary>
-    /// Логика взаимодействия для HistoryForm.xaml
+    /// Логика взаимодействия для MRForm.xaml
     /// </summary>
-    public partial class HistoryForm : Window
+    public partial class MRForm : Window
     {
         private readonly MainWindow MF;
-        public HistoryForm(MainWindow f)
+        public MRForm(MainWindow f)
         {
-            MF= f;
+            MF = f;
             InitializeComponent();
         }
 
@@ -30,6 +30,5 @@ namespace WpfTestTask
         {
             MF.closingForm(this, e);
         }
-
     }
 }
