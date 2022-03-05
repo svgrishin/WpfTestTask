@@ -30,6 +30,39 @@ namespace WpfTestTask
             HF = new HistoryForm(this);
         }
 
+        public void setTextSize()
+        {
+            double x = 0.6;
+            
+            double fSize = label1.FontSize;
+            //float s = TextRenderer.MeasureText(label1.Text, label1.Font).Width;
+            string str = label1.Content.ToString();
+            double s = fSize * str.Length*x;
+            double w = Width;
+            if (s > w)
+            {
+                while (w < s)
+                {
+                    try
+                    {
+                        fSize--;
+                        label1.FontSize = fSize;
+                        s = fSize * str.Length * x;
+                    }
+                    catch { }
+
+                }
+            }
+            else
+
+                while (w > s + fSize && label1.FontSize < 50)
+                {
+                    fSize++;
+                    label1.FontSize=fSize;
+                    s = fSize * str.Length * x;
+                }
+        }
+
         private void button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -64,6 +97,11 @@ namespace WpfTestTask
             IsEnabled = true;
             f.Visibility = Visibility.Collapsed;
             e.Cancel = true;
+        }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            setTextSize();
         }
     }
 }
