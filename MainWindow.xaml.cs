@@ -35,7 +35,6 @@ namespace WpfTestTask
             double x = 0.6;
             
             double fSize = label1.FontSize;
-            //float s = TextRenderer.MeasureText(label1.Text, label1.Font).Width;
             string str = label1.Content.ToString();
             double s = fSize * str.Length*x;
             double w = Width;
@@ -61,6 +60,41 @@ namespace WpfTestTask
                     label1.FontSize=fSize;
                     s = fSize * str.Length * x;
                 }
+        }
+
+        private void setFonSize(float fSize)
+        {
+            btn_MR.FontSize = fSize;
+            btn_MS.FontSize = fSize;
+            btn_MC.FontSize = fSize;
+            btn_MR.FontSize = fSize;
+            btn_MPlus.FontSize = fSize;
+            btn_MMinus.FontSize = fSize;
+            //button1.FontSize = fSize;
+            btn_History.FontSize = fSize;
+            //button2.FontSize = fSize;
+            btn_Result.FontSize = fSize;
+            btn_Plus.FontSize = fSize;
+            btn_Minus.FontSize = fSize;
+            btn_Negative.FontSize = fSize;
+            btn_Coma.FontSize = fSize;
+            btn_1.FontSize = fSize;
+            btn_0.FontSize = fSize;
+            btn_2.FontSize = fSize;
+            btn_7.FontSize = fSize;
+            btn_3.FontSize = fSize;
+            btn_8.FontSize = fSize;
+            btn_6.FontSize = fSize;
+            btn_4.FontSize = fSize;
+            btn_5.FontSize = fSize;
+            btn_Divide.FontSize = fSize;
+            btn_Multiply.FontSize = fSize;
+            btn_Backspase.FontSize = fSize;
+            btn_SQR.FontSize = fSize;
+            btn_SQRT.FontSize = fSize;
+            btn_C.FontSize = fSize;
+            btn_9.FontSize = fSize;
+            btn_CE.FontSize = fSize;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
