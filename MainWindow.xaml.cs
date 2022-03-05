@@ -23,6 +23,7 @@ namespace WpfTestTask
         #pragma warning disable IDE0044 // Добавить модификатор только для чтения
         private readonly MRForm mrForm;
         private readonly HistoryForm HF;
+        bool sizeFlag = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -136,6 +137,22 @@ namespace WpfTestTask
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             setTextSize();
+
+            bool flag = sizeFlag;
+
+            if (Height >= 400) setTextSize();
+
+            if (Height > 650 && Width > 350) sizeFlag = true;
+            else sizeFlag = false;
+
+            if (flag != sizeFlag)
+            {
+                switch (sizeFlag)
+                {
+                    case true: setFonSize(20); break;
+                    case false: setFonSize(12); break;
+                }
+            }
         }
     }
 }
