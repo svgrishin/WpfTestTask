@@ -37,18 +37,18 @@ namespace WpfTestTask
         /// <summary>
         /// Форма с историей вычислений
         /// </summary>
-        private readonly HistoryForm HF;
+        private readonly HistoryForm hf;
 
         /// <summary>
         /// Форма отображения памяти калькулятора
         /// </summary>
-        private readonly MRForm mrForm;
+        private readonly MRForm mf;
 
         public MainWindow()
         {
             InitializeComponent();
-            mrForm = new MRForm(this);
-            HF = new HistoryForm(this);
+            mf = new MRForm(this);
+            hf = new HistoryForm(this);
         }
 
         private void Number_Click(object sender, RoutedEventArgs e)
@@ -217,7 +217,7 @@ namespace WpfTestTask
 
             hf.Left = Left + (Width - hf.Width) / 2;
             hf.Top = Top + (Height - hf.Height) / 2;
-            Enabled = false;
+            IsEnabled = false;
             hf.Show();
         }
 
@@ -298,14 +298,14 @@ namespace WpfTestTask
 
             calc.mrFlag = true;
 
-            btn_MC.Enabled = true;
-            btn_MR.Enabled = true;
+            btn_MC.IsEnabled = true;
+            btn_MR.IsEnabled = true;
         }
 
         private void btn_MC_Click(object sender, RoutedEventArgs e)
         {
             calc.mr = new double[1];
-            btn_MList.Enabled = false;
+            btn_MList.IsEnabled = false;
             mf.listBox_MR.Items.Clear();
             switchMRButtons();
         }
@@ -323,8 +323,8 @@ namespace WpfTestTask
 
             calc.mrFlag = true;
 
-            btn_MC.Enabled = true;
-            btn_MR.Enabled = true;
+            btn_MC.IsEnabled = true;
+            btn_MR.IsEnabled = true;
         }
 
         private void btn_MList_Click(object sender, RoutedEventArgs e)
@@ -332,7 +332,7 @@ namespace WpfTestTask
             mf.Left = Left + (Width - hf.Width) / 2;
             mf.Top = Top + (Height - hf.Height) / 2;
             mf.Show();
-            Enabled = false;
+            IsEnabled = false;
         }
 
         private void btn_MMinus_Click(object sender, RoutedEventArgs e)
@@ -340,8 +340,8 @@ namespace WpfTestTask
             setMR(calc.mr.Length - 1, -1);
             calc.mrFlag = true;
 
-            btn_MC.Enabled = true;
-            btn_MR.Enabled = true;
+            btn_MC.IsEnabled = true;
+            btn_MR.IsEnabled = true;
         }
 
         public void setMR(int indexOf, int negative)
@@ -361,7 +361,7 @@ namespace WpfTestTask
             calc.funcFlag = true;
             calc.resBtnFlag = true;
 
-            btn_MList.Enabled = true;
+            btn_MList.IsEnabled = true;
 
             calc.mrFlag = true;
         }
@@ -380,8 +380,8 @@ namespace WpfTestTask
 
         public void switchMRButtons()
         {
-            btn_MR.Enabled = false;
-            btn_MC.Enabled = false;
+            btn_MR.IsEnabled = false;
+            btn_MC.IsEnabled = false;
         }
 
         /// <summary>
@@ -532,7 +532,7 @@ namespace WpfTestTask
             btn_SQRT.FontSize = fSize;
             btn_C.FontSize = fSize;
             btn_9.FontSize = fSize;
-            btn_CE.FontSize = fSize;
+            btn_Percent.FontSize = fSize;
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -558,12 +558,12 @@ namespace WpfTestTask
 
         private void btn_M_Click(object sender, RoutedEventArgs e)
         {
-            showForm(mrForm);
+            showForm(mf);
         }
 
         private void btn_History_Click(object sender, RoutedEventArgs e)
         {
-            showForm(HF);
+            showForm(hf);
         }
 
         private void showForm(Window f)
@@ -580,6 +580,11 @@ namespace WpfTestTask
             IsEnabled = true;
             f.Visibility = Visibility.Collapsed;
             e.Cancel = true;
+        }
+
+        private void btn_Percent_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

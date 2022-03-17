@@ -6,5 +6,5 @@
         xmlns:local="clr-namespace:WpfTestTask"
         mc:Ignorable="d"
         Title="MRForm" Height="445" Width="333" WindowStyle="ToolWindow" Closing="Window_Closing">
-    <ListBox d:ItemsSource="{d:SampleData ItemCount=5}"/>
+    <ListBox x:Name="listBox_MR" d:ItemsSource="{d:SampleData ItemCount=5}"/>
 </Window>
