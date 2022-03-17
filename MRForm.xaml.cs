@@ -19,16 +19,26 @@ namespace WpfTestTask
     /// </summary>
     public partial class MRForm : Window
     {
-        private readonly MainWindow MF;
+        MainWindow mainForm;
+
         public MRForm(MainWindow f)
         {
-            MF = f;
+            mainForm = f;
             InitializeComponent();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            MF.closingForm(this, e);
+            Hide();
+            mainForm.IsEnabled = true;
+            e.Cancel = true;
+        }
+
+        private void listBox_MR_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            mainForm.getFromMR(listBox_MR.SelectedIndex + 1);
+            Hide();
+            mainForm.IsEnabled = true;
         }
     }
 }

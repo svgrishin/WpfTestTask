@@ -6,5 +6,5 @@
         xmlns:local="clr-namespace:WpfTestTask"
         mc:Ignorable="d"
         Title="HistoryForm" Height="418" Width="310" Closing="Window_Closing">
-    <ListBox x:Name="HistoryList" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+    <ListBox x:Name="HistoryList" d:ItemsSource="{d:SampleData ItemCount=5}" MouseDoubleClick="HistoryList_MouseDoubleClick"/>
 </Window>

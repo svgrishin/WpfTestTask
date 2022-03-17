@@ -19,17 +19,28 @@ namespace WpfTestTask
     /// </summary>
     public partial class HistoryForm : Window
     {
-        private readonly MainWindow MF;
+        MainWindow calcForm;
+        
         public HistoryForm(MainWindow f)
         {
-            MF= f;
             InitializeComponent();
+            calcForm = f;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            MF.closingForm(this, e);
+            HistoryList.Items.Clear();
+            Hide();
+            calcForm.IsEnabled = true;
+            e.Cancel = true;
         }
 
+        private void HistoryList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            calcForm.loadMe(HistoryList.SelectedIndex);
+            calcForm.Combobox1.Items.Add(HistoryList.Items[HistoryList.SelectedIndex]);
+            
+            Close();
+        }
     }
 }
