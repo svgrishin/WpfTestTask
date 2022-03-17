@@ -202,25 +202,6 @@ namespace WpfTestTask
             btn_Func_Click(calc.fDeleg, true);
         }
 
-        private void btn_Percent_Click(object sender, EventArgs e)
-        {
-            string location = Directory.GetCurrentDirectory() + "/calc.json";
-            string[] s = File.ReadAllLines(location);
-            int i = 0;
-            foreach (string str in s)
-            {
-                Array.Resize(ref calcs, i + 1);
-                calcs[i] = JsonConvert.DeserializeObject<Calculator>(str);
-                hf.HistoryList.Items.Add(calcs[i].resultString);
-                i++;
-            }
-
-            hf.Left = Left + (Width - hf.Width) / 2;
-            hf.Top = Top + (Height - hf.Height) / 2;
-            IsEnabled = false;
-            hf.Show();
-        }
-
         /// <summary>
         /// Выполнение заданной функции
         /// </summary>
@@ -563,6 +544,22 @@ namespace WpfTestTask
 
         private void btn_History_Click(object sender, RoutedEventArgs e)
         {
+            string location = Directory.GetCurrentDirectory() + "/calc.json";
+            string[] s = File.ReadAllLines(location);
+            int i = 0;
+            foreach (string str in s)
+            {
+                Array.Resize(ref calcs, i + 1);
+                calcs[i] = JsonConvert.DeserializeObject<Calculator>(str);
+                hf.HistoryList.Items.Add(calcs[i].resultString);
+                i++;
+            }
+
+            hf.Left = Left + (Width - hf.Width) / 2;
+            hf.Top = Top + (Height - hf.Height) / 2;
+            IsEnabled = false;
+            //hf.Show();
+
             showForm(hf);
         }
 
@@ -580,11 +577,6 @@ namespace WpfTestTask
             IsEnabled = true;
             f.Visibility = Visibility.Collapsed;
             e.Cancel = true;
-        }
-
-        private void btn_Percent_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
