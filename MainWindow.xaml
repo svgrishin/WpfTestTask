@@ -32,7 +32,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Button x:Name="btn_History" Content="History" Margin="0,0,0,0" Grid.Column="0" Grid.Row="0" BorderThickness="0.5,0.5,0.5,0.5" Click="btn_History_Click"/>
-                <Button x:Name="btn_Percent" Content="%" Margin="0,0,0,0" Grid.Column="1" Grid.Row="0" BorderThickness="0.5,0.5,0.5,0.5"/>
+                <Button x:Name="btn_Percent" Content="CE" Margin="0,0,0,0" Grid.Column="1" Grid.Row="0" BorderThickness="0.5,0.5,0.5,0.5"/>
                 <Button x:Name="btn_C" Content="C" Margin="0,0,0,0" Grid.Column="2" Grid.Row="0" BorderThickness="0.5,0.5,0.5,0.5" Click="btn_clear_Click"/>
                 <Button x:Name="btn_Backspase" Content="Del" Margin="0,0,0,0" Grid.Column="3" Grid.Row="0" BorderThickness="0.5,0.5,0.5,0.5" Click="btn_bspace_Click"/>
                 <Button x:Name="btn_Revert" Content="1/x" Margin="0,0,0,0" Grid.Column="0" Grid.Row="1" BorderThickness="0.5,0.5,0.5,0.5" Click="btn_Fraction_Click"/>
