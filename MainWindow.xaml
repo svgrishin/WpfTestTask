@@ -65,12 +65,12 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="btn_MC" Content="MC" Margin="0,0,0,0" Grid.Column="0" BorderThickness="0.5,0.5,0.5,0.5" Click="btn_MC_Click_1"/>
-                <Button x:Name="btn_MR" Content="MR" Margin="0,0,0,0" Grid.Column="1" BorderThickness="0.5,0.5,0.5,0.5" Click="btn_MR_Click_1"/>
+                <Button x:Name="btn_MC" Content="MC" IsEnabled="False" Margin="0,0,0,0" Grid.Column="0" BorderThickness="0.5,0.5,0.5,0.5" Click="btn_MC_Click_1"/>
+                <Button x:Name="btn_MR" Content="MR" IsEnabled="False" Margin="0,0,0,0" Grid.Column="1" BorderThickness="0.5,0.5,0.5,0.5" Click="btn_MR_Click_1"/>
                 <Button x:Name="btn_MPlus" Content="M+" Margin="0,0,0,0" Grid.Column="2" BorderThickness="0.5,0.5,0.5,0.5" Click="btn_MPlus_Click_1"/>
                 <Button x:Name="btn_MMinus" Content="M-" Margin="0,0,0,0" Grid.Column="3" BorderThickness="0.5,0.5,0.5,0.5" Click="btn_MMinus_Click_1"/>
                 <Button x:Name="btn_MS" Content="MS" Margin="0,0,0,0" Grid.Column="4" BorderThickness="0.5,0.5,0.5,0.5" Click="btn_MS_Click_1"/>
-                <Button x:Name="btn_MList" Content="M" Margin="0,0,0,0" Grid.Column="5" BorderThickness="0.5,0.5,0.5,0.5" Click="btn_M_Click"/>
+                <Button x:Name="btn_MList" Content="M" IsEnabled="False" Margin="0,0,0,0" Grid.Column="5" BorderThickness="0.5,0.5,0.5,0.5" Click="btn_M_Click"/>
 
             </Grid>
         </Grid>
