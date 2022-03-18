@@ -265,64 +265,12 @@ namespace WpfTestTask
             setTextSize();
         }
 
-        private void btn_MR_Click(object sender, RoutedEventArgs e)
-        {
-            getFromMR(calc.mr.Length - 1);
-            label1.Content = calc.arg;
-
-            calc.mrFlag = true;
-        }
-
-        private void btn_MPlus_Click(object sender, RoutedEventArgs e)
-        {
-            setMR(calc.mr.Length - 1, 1);
-
-            calc.mrFlag = true;
-
-            btn_MC.IsEnabled = true;
-            btn_MR.IsEnabled = true;
-        }
-
-        private void btn_MC_Click(object sender, RoutedEventArgs e)
-        {
-            calc.mr = new double[1];
-            btn_MList.IsEnabled = false;
-            mf.listBox_MR.Items.Clear();
-            switchMRButtons();
-        }
-
-        private void btn_MS_Click(object sender, RoutedEventArgs e)
-        {
-            int l = calc.mr.Length - 1;
-
-            if (calc.mr.Length > 0)
-            {
-                Array.Resize(ref calc.mr, l + 2);
-                l++;
-            }
-            setMR(l, 1);
-
-            calc.mrFlag = true;
-
-            btn_MC.IsEnabled = true;
-            btn_MR.IsEnabled = true;
-        }
-
         private void btn_MList_Click(object sender, RoutedEventArgs e)
         {
             mf.Left = Left + (Width - hf.Width) / 2;
             mf.Top = Top + (Height - hf.Height) / 2;
             mf.Show();
             IsEnabled = false;
-        }
-
-        private void btn_MMinus_Click(object sender, RoutedEventArgs e)
-        {
-            setMR(calc.mr.Length - 1, -1);
-            calc.mrFlag = true;
-
-            btn_MC.IsEnabled = true;
-            btn_MR.IsEnabled = true;
         }
 
         public void setMR(int indexOf, int negative)
@@ -577,6 +525,66 @@ namespace WpfTestTask
             IsEnabled = true;
             f.Visibility = Visibility.Collapsed;
             e.Cancel = true;
+        }
+
+        private void btn_MPlus_Click_1(object sender, RoutedEventArgs e)
+        {
+            setMR(calc.mr.Length - 1, 1);
+
+            calc.mrFlag = true;
+
+            btn_MC.IsEnabled = true;
+            btn_MR.IsEnabled = true;
+        }
+
+        private void btn_MC_Click_1(object sender, RoutedEventArgs e)
+        {
+            calc.mr = new double[1];
+            btn_MList.IsEnabled = false;
+            mf.listBox_MR.Items.Clear();
+            switchMRButtons();
+        }
+
+        private void btn_MR_Click_1(object sender, RoutedEventArgs e)
+        {
+            getFromMR(calc.mr.Length - 1);
+            label1.Content = calc.arg;
+
+            calc.mrFlag = true;
+        }
+
+        private void btn_MMinus_Click_1(object sender, RoutedEventArgs e)
+        {
+            setMR(calc.mr.Length - 1, -1);
+            calc.mrFlag = true;
+
+            btn_MC.IsEnabled = true;
+            btn_MR.IsEnabled = true;
+        }
+
+        private void btn_MS_Click_1(object sender, RoutedEventArgs e)
+        {
+            int l = calc.mr.Length - 1;
+
+            if (calc.mr.Length > 0)
+            {
+                Array.Resize(ref calc.mr, l + 2);
+                l++;
+            }
+            setMR(l, 1);
+
+            calc.mrFlag = true;
+
+            btn_MC.IsEnabled = true;
+            btn_MR.IsEnabled = true;
+        }
+
+        private void btn_Percent_Click(object sender, RoutedEventArgs e)
+        {
+            calc.arg = "";
+            calc.disp = "0";
+            label1.Content = calc.disp;
+            label1.FontSize = 50;
         }
     }
 }
