@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace WpfTestTask
 {
@@ -267,7 +267,7 @@ namespace WpfTestTask
                 s = s.TrimStart('-');
                 minusFlag = true;
             }
-            if (s.Contains(',') == false)
+            if (s.Contains(",") == false)
             {
                 for (int i = 3; i <= s.Length; i += 4)
                 {

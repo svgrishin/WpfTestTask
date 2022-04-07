@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -93,7 +93,7 @@ namespace WpfTestTask
 
         private void btn_Coma_Click(object sender, RoutedEventArgs e)
         {
-            if (calc.arg.Contains(',') == false)
+            if (calc.arg.Contains(",") == false)
             {
                 if (calc.arg == "")
                 {
