@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-
-using System.Text;
-
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Newtonsoft.Json;
 using System.IO;
 
@@ -112,6 +101,9 @@ namespace WpfTestTask
             label1.Content = calc.inputValues(',');
         }
 
+        /// <summary>
+        /// Изменение размера шрифта на дисплее в соответствии с длиной строки
+        /// </summary>
         public void setTextSize()
         {
             double x = 0.6;
@@ -493,22 +485,30 @@ namespace WpfTestTask
         private void btn_History_Click(object sender, RoutedEventArgs e)
         {
             string location = Directory.GetCurrentDirectory() + "/calc.json";
-            string[] s = File.ReadAllLines(location);
-            int i = 0;
-            foreach (string str in s)
+
+            try
             {
-                Array.Resize(ref calcs, i + 1);
-                calcs[i] = JsonConvert.DeserializeObject<Calculator>(str);
-                hf.HistoryList.Items.Add(calcs[i].resultString);
-                i++;
+                string[] s = File.ReadAllLines(location);
+                int i = 0;
+                foreach (string str in s)
+                {
+                    Array.Resize(ref calcs, i + 1);
+                    calcs[i] = JsonConvert.DeserializeObject<Calculator>(str);
+                    hf.HistoryList.Items.Add(calcs[i].resultString);
+                    i++;
+                }
+
+                hf.Left = Left + (Width - hf.Width) / 2;
+                hf.Top = Top + (Height - hf.Height) / 2;
+                IsEnabled = false;
+
+                showForm(hf);
             }
-
-            hf.Left = Left + (Width - hf.Width) / 2;
-            hf.Top = Top + (Height - hf.Height) / 2;
-            IsEnabled = false;
-            //hf.Show();
-
-            showForm(hf);
+            catch
+            {
+                MessageBox.Show("Нет ранее выполненных вычислений");
+            }
+            
         }
 
         private void showForm(Window f)
